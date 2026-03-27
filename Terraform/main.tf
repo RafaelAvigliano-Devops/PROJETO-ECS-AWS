@@ -2,6 +2,22 @@ provider "aws" {
   region = var.region
 }
 
+# S3 Bucket for Terraform state
+resource "aws_s3_bucket" "backend" {
+  bucket = var.backend_bucket
+
+  tags = {
+    Name = "Terraform Backend Bucket"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "backend" {
+  bucket = aws_s3_bucket.backend.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 # VPC
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr

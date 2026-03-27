@@ -29,3 +29,13 @@ variable "container_port" {
   description = "Port the container listens on"
   default     = 80
 }
+
+variable "backend_bucket" {
+  description = "S3 bucket for Terraform state"
+  default     = "terraform-state-bucket-ecs-project"
+}
+
+variable "backend_key" {
+  description = "Key for Terraform state"
+  default     = "terraform.tfstate"
+}
