@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Inicial de DevOps - Mudança de Cores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.5s;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>Teste Inicial de DevOps</h1>
+    <p>Este é um projeto de exemplo para testar pipelines de DevOps. O site permite mudar a cor de fundo clicando no botão abaixo.</p>
+    <p>Objetivos do teste:</p>
+    <ul>
+        <li>Configurar infraestrutura na AWS usando Terraform</li>
+        <li>Criar VPC, Internet Gateway e sub-redes em duas zonas de disponibilidade</li>
+        <li>Configurar ECS para deploy de containers</li>
+        <li>Implementar CI/CD para build e deploy automático</li>
+        <li>Testar escalabilidade e monitoramento</li>
+    </ul>
+    <button onclick="changeColor()">Mudar Cor</button>
+
+    <script>
+        function changeColor() {
+            var colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F', '#BB8FCE'];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('body').style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
